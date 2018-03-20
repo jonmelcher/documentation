@@ -37,6 +37,7 @@ function dependencyStream(
       babelify.configure({
         sourceMaps: false,
         compact: false,
+        babelrc: false,
         presets: [
           require('@babel/preset-env'),
           require('@babel/preset-stage-0'),
@@ -58,7 +59,7 @@ function dependencyStream(
   md.end();
 
   return new Promise((resolve, reject) => {
-    md.once('error', reject);
+    md.on('error', resolve);
     md.pipe(
       concat(function(inputs) {
         resolve(
