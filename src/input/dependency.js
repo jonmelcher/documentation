@@ -37,6 +37,7 @@ function dependencyStream(
       babelify.configure({
         sourceMap: false,
         compact: false,
+        babelrc: false,
         presets: [
           require('babel-preset-env'),
           require('babel-preset-stage-0'),

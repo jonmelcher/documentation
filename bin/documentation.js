@@ -3,7 +3,7 @@
 /* eslint no-console: 0 */
 
 const yargs = require('yargs');
-const commands = require('../lib/commands');
+const commands = require('../src/commands');
 
 const argv = yargs
   .strict()
@@ -26,25 +26,25 @@ const argv = yargs
   .usage(
     `Usage:
 
-  # generate markdown docs for index.js and files it references 
-  $0 build index.js -f md 
+  # generate markdown docs for index.js and files it references
+  $0 build index.js -f md
 
-  # generate html docs for all files in src 
-  $0 build src/** -f html -o docs 
+  # generate html docs for all files in src
+  $0 build src/** -f html -o docs
 
-  # document index.js, ignoring any files it requires or imports 
-  $0 build index.js -f md --shallow 
+  # document index.js, ignoring any files it requires or imports
+  $0 build index.js -f md --shallow
 
-  # build, serve, and live-update html docs for app.js 
-  $0 serve app.js 
+  # build, serve, and live-update html docs for app.js
+  $0 serve app.js
 
-  # validate JSDoc syntax in util.js 
-  $0 lint util.js 
+  # validate JSDoc syntax in util.js
+  $0 lint util.js
 
-  # update the API section of README.md with docs from index.js 
-  $0 readme index.js --section=API 
+  # update the API section of README.md with docs from index.js
+  $0 readme index.js --section=API
 
-  # build docs for all values exported by index.js 
+  # build docs for all values exported by index.js
   $0 build --document-exported index.js
 `
   )
